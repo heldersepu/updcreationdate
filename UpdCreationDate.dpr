@@ -7,7 +7,7 @@ in a given directory
 program UpdCreationDate;
 {$APPTYPE CONSOLE}
 uses
-  SysUtils;
+  SysUtils, Windows ;
 var
   I: Integer;
   showFiles: Boolean;
@@ -23,9 +23,37 @@ begin
   writeln(' ');
 end;
 
-procedure updateCreationDate(strFolderName: String; showFiles: Boolean);
+function SetDateToFile(const FileName: string; Value: Integer): Boolean;
+var
+  hFile: THandle;
+  FTimeC,FTimeA,FTimeM : TFileTime;
 begin
-  {ToDO add logic to update the Creation Date}
+  Result := False;
+  try
+    hFile := FileOpen(FileName, fmOpenWrite or fmShareDenyNone);
+    if (hFile > 0) then
+    begin
+      GetFileTime(hFile,@FTimeC,@FTimeA,@FTimeM);
+      Result := SetFileTime(hFile,@FTimeM,@FTimeA,@FTimeM);
+    end;
+  finally
+    FileClose(hFile);
+  end;
+end;
+
+procedure updateCreationDate(strFolderName: String; showFiles: Boolean);
+var
+  tSR : TSearchRec;
+begin
+  if FindFirst(strFolderName + '\*.*', $20, tSR) = 0 then
+  begin
+    repeat
+      if showFiles then
+        Writeln(intToStr(tSR.Time) + '   ' + tSR.Name);
+      if not SetDateToFile(strFolderName + '\' + tSR.Name, tSR.Time) then
+        Writeln(' Failed:   ' + tSR.Name);
+    until (FindNext(tSR) <> 0);
+  end;
 end;
 
 begin
