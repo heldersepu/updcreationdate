@@ -23,18 +23,18 @@ begin
   writeln(' ');
 end;
 
-function SetDateToFile(const FileName: string; Value: Integer): Boolean;
+function SetDateToFile(const FileName: string): Boolean;
 var
   hFile: THandle;
-  FTimeC,FTimeA,FTimeM : TFileTime;
+  FTimeC, FTimeA, FTimeM : TFileTime;
 begin
   Result := False;
   try
     hFile := FileOpen(FileName, fmOpenWrite or fmShareDenyNone);
     if (hFile > 0) then
     begin
-      GetFileTime(hFile,@FTimeC,@FTimeA,@FTimeM);
-      Result := SetFileTime(hFile,@FTimeM,@FTimeA,@FTimeM);
+      GetFileTime(hFile, @FTimeC, @FTimeA, @FTimeM);
+      Result := SetFileTime(hFile, @FTimeM, @FTimeA, @FTimeM);
     end;
   finally
     FileClose(hFile);
@@ -50,7 +50,7 @@ begin
     repeat
       if showFiles then
         Writeln(intToStr(tSR.Time) + '   ' + tSR.Name);
-      if not SetDateToFile(strFolderName + '\' + tSR.Name, tSR.Time) then
+      if not SetDateToFile(strFolderName + '\' + tSR.Name) then
         Writeln(' Failed:   ' + tSR.Name);
     until (FindNext(tSR) <> 0);
   end;
