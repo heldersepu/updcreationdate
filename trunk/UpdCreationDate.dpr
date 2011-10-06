@@ -7,7 +7,8 @@ in a given directory
 program UpdCreationDate;
 {$APPTYPE CONSOLE}
 uses
-  SysUtils, Windows ;
+  SysUtils, Windows,
+  ColorUtils in 'ColorUtils.pas';
 var
   I: Integer;
   showFiles: Boolean;
@@ -51,7 +52,7 @@ begin
       if showFiles then
         Writeln(intToStr(tSR.Time) + '   ' + tSR.Name);
       if not SetDateToFile(strFolderName + '\' + tSR.Name) then
-        Writeln(' Failed:   ' + tSR.Name);
+        ColorWrite(' Failed:   ',12); ColorWrite('' + tSR.Name,14,True);
     until (FindNext(tSR) <> 0);
   end;
 end;
