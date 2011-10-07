@@ -52,7 +52,9 @@ begin
       if showFiles then
         Writeln(intToStr(tSR.Time) + '   ' + tSR.Name);
       if not SetDateToFile(strFolderName + '\' + tSR.Name) then
+      begin
         ColorWrite(' Failed:   ',12); ColorWrite('' + tSR.Name,14,True);
+      end;
     until (FindNext(tSR) <> 0);
   end;
 end;
