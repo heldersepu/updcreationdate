@@ -50,10 +50,20 @@ begin
   begin
     repeat
       if showFiles then
-        Writeln(intToStr(tSR.Time) + '   ' + tSR.Name);
+        Writeln(intToStr(tSR.Time) + '   ' + strFolderName + '\' + tSR.Name);
       if not SetDateToFile(strFolderName + '\' + tSR.Name) then
       begin
         ColorWrite(' Failed:   ',12); ColorWrite('' + tSR.Name,14,True);
+      end;
+    until (FindNext(tSR) <> 0);
+  end;
+
+  if FindFirst(strFolderName + '\*.*', faDirectory, tSR) = 0 then
+  begin
+    repeat
+      If (tSR.Name <> '.') and (tSR.Name <> '..') and (tSR.Attr = 16)then
+      begin
+        updateCreationDate(strFolderName + '\' + tSR.Name, showFiles);
       end;
     until (FindNext(tSR) <> 0);
   end;
