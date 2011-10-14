@@ -17,7 +17,7 @@ var
 procedure ShowHelp;
 begin
   writeln(' ');
-  writeln('Update the created date with the values of the date modified.');
+  ColorWrite('Update the created date with the values of the date modified.',14,True);
   writeln(' ');
   writeln(' USAGE: UpdCreationDate <Dir-To_Modify> [-d]');
   writeln('   -d to display the file processed');
