@@ -125,7 +125,7 @@ Locale=1033
 CodePage=1252
 [Version Info Keys]
 CompanyName=
-FileDescription=Program will updated the creation date to match the date modified to all the files in a given directory.
+FileDescription=Program will update the creation date to match the date modified to all the files in a given directory.
 FileVersion=1.0.0.3
 InternalName=
 LegalCopyright=CopyLeft

@@ -1,5 +1,5 @@
 {**
-Program will updated the creation date to
+Program will update the creation date to
 match the date modified to all the files
 in a given directory
 **}
