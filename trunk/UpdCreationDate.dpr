@@ -6,6 +6,7 @@ in a given directory
 
 program UpdCreationDate;
 {$APPTYPE CONSOLE}
+{$R *.RES}
 uses
   SysUtils, Windows,
   ColorUtils in 'ColorUtils.pas';
@@ -61,8 +62,10 @@ begin
   if FindFirst(strFolderName + '\*.*', faDirectory, tSR) = 0 then
   begin
     repeat
-      If (tSR.Name <> '.') and (tSR.Name <> '..') and (tSR.Attr = 16)then
+      If (Pos('.', tSR.Name) = 0) and (tSR.Attr <> 32) then
       begin
+        if showFiles then
+          ColorWrite('SubFolder: '+tSR.Name+' '+IntToStr(tSR.Attr),14,True);
         updateCreationDate(strFolderName + '\' + tSR.Name, showFiles);
       end;
     until (FindNext(tSR) <> 0);
