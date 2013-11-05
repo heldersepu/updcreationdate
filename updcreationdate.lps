@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="updcreationdate.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="updcreationdate"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="3" Y="15"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="C:\lazarus\fpc\2.6.2\source\packages\fcl-base\src\custapp.pp"/>
+        <UnitName Value="CustApp"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="418"/>
+        <CursorPos X="23" Y="448"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="9" HistoryIndex="8">
+      <Position1>
+        <Filename Value="updcreationdate.lpr"/>
+        <Caret Line="86" Column="18" TopLine="75"/>
+      </Position1>
+      <Position2>
+        <Filename Value="updcreationdate.lpr"/>
+        <Caret Line="84" Column="42" TopLine="67"/>
+      </Position2>
+      <Position3>
+        <Filename Value="updcreationdate.lpr"/>
+        <Caret Line="78" Column="40" TopLine="65"/>
+      </Position3>
+      <Position4>
+        <Filename Value="updcreationdate.lpr"/>
+        <Caret Line="86" Column="10" TopLine="67"/>
+      </Position4>
+      <Position5>
+        <Filename Value="C:\lazarus\fpc\2.6.2\source\packages\fcl-base\src\custapp.pp"/>
+        <Caret Line="63" Column="23" TopLine="44"/>
+      </Position5>
+      <Position6>
+        <Filename Value="C:\lazarus\fpc\2.6.2\source\packages\fcl-base\src\custapp.pp"/>
+        <Caret Line="64" Column="23" TopLine="44"/>
+      </Position6>
+      <Position7>
+        <Filename Value="C:\lazarus\fpc\2.6.2\source\packages\fcl-base\src\custapp.pp"/>
+        <Caret Line="370" Column="87" TopLine="349"/>
+      </Position7>
+      <Position8>
+        <Filename Value="updcreationdate.lpr"/>
+        <Caret Line="86" Column="52" TopLine="73"/>
+      </Position8>
+      <Position9>
+        <Filename Value="updcreationdate.lpr"/>
+        <Caret Line="78" Column="14" TopLine="60"/>
+      </Position9>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
